@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+}
+
+section, footer {
+    padding: 40px 70px;
+}
+
+.simulador-financeiro {
+    background-color: #e7d102;
+}
+
+footer {
+    background-color: #7a7e80;
+}
+
+/* Estilo para a navbar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 65px;
+    background-color: white;
+}
+
+img {
+    width: 150px;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+li {
+    font: 700 15px "Montserrat";
+    color: #7a7e80;
+    cursor: pointer;
+}
+
+li:hover {
+    color: #e7d102;
+    transition: all 0.4s;
+}
+
+/* Estilo para os botões de entrar e cadastro da navbar */
+.btn {
+    height: 33px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font: 700 14px "Montserrat";
+}
+
+.btn-entrar {
+    border: 1px solid #2ebc68;
+    background-color: white;
+    color: #2ebc68;
+}
+
+.btn-entrar:hover {
+    border: none;
+    background-color: #e7d102;
+    color: white;
+    transition: all 0.6s;
+}
+
+.btn-cadastro {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn-cadastro:hover {
+    border: 1px solid #e7d102;
+    background-color: white;
+    color: #e7d102;
+    transition: all 0.6s;
+}
+
+/* Estilo para seções */
+
+.titulo1 {
+    font-size: 40px;
+}
+
+.titulo2 {
+    font: 600 18px "Montserrat";
+    margin-bottom: 5px;
+}
+
+.paragrafo {
+    font: 400 17px "Montserrat";
+    width: 90%;
+    padding: 10px 0 10px 0;
+}
+
+.input {
+    height: 30px;
+    outline: none;
+    border: 2px solid black;
+    border-radius: 6px;
+    padding-left: 5px;
+}
+
+.input:focus {
+    border-color: #28a745;
+    transition: all 0.4s;
+}
+
+.btn-exibir {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    height: 33px;
+    padding: 0 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: 700 14px "Montserrat";
+}
+
+.btn-exibir:focus {
+    border: 1px solid white;
+    background-color: #e7d102;
+    /* Cor de fundo do botão de entrar */
+    color: black;
+    transition: all 0.4s;
+}
+
+.div-resposta {
+    margin: 20px 0;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+footer {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.copy {
+    font-size: 13px;
+    font-weight: 200;
+}

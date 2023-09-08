@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador Financeiro Fruittech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <img src="Group 1.svg" alt="Logo-FruitTech" />
+    <ul>
+      <li>Sobre nós</li>
+      <li>Como funciona</li>
+      <li>Contato</li>
+    </ul>
+    <div>
+      <button class="btn btn-entrar">Entrar</button>
+      <button class="btn btn-cadastro">Cadastro</button>
+    </div>
+  </header>
+
+  <section class="simulador-financeiro">
+    <h2 class="titulo1">Simulador Financeiro</h2>
+    <p class="paragrafo">Use nossa calculadora para estimar quanto você pode estar <b>perdendo anualmente no transporte dos seus alimentos</b>. Além disso, calcule o possível <b>retorno sobre o investimento (ROI)</b> ao implementar a tecnologia da FruitTech no seu negócio.</p>
+
+    <div>
+      <p class="titulo2">Carga transportada anualmente (em toneladas):</p>
+      <input id="input_carga_transportada" class="input" />
+      <button onclick="calcularPerdaCarga()" class="btn-exibir">Calcular Perda de Carga</button>
+
+      <div id="exibir_perda_carga" class="div-resposta"></div>
+    </div>
+
+    <div>
+      <p class="titulo2">Faturamento anual da empresa:</p>
+      <input id="input_faturamento_anual" class="input" />
+      <button onclick="calcularPerdaFaturamento()" class="btn btn-exibir">Calcular Perda R$</button>
+      <div id="exibir_perda_faturamento" class="div-resposta"></div>
+      <div id="exibir_valor_restaurado" class="div-resposta"></div>
+      <div id="exibir_roi" class="div-resposta"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contate-nos para saber mais sobre como a FruitTech pode beneficiar o seu negócio.</p>
+    <p class="copy">&copy; 2023 FruitTech - Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
+
+<script>
+  function calcularPerdaCarga() {
+    var cargaAnual = Number(input_carga_transportada.value);
+    var perdaCargaTotal = cargaAnual * 0.3;
+    var perdaCargaTransporte = perdaCargaTotal * 0.5;
+
+    exibir_perda_carga.innerHTML = `Com uma carga anual transportada de <b>${cargaAnual} toneladas</b>, até <b>${perdaCargaTotal} toneladas</b> são perdidas durante todo o processo de produção, sendo até <b>${perdaCargaTransporte} toneladas</b> somente durante o transporte. Isso representa uma oportunidade significativa de melhoria na eficiência da sua operação.`;
+  }
+
+  function calcularPerdaFaturamento() {
+    var faturamentoAnual = Number(input_faturamento_anual.value);
+    var perdaFatTotal = faturamentoAnual * 0.3;
+    var perdaFatTransporte = perdaFatTotal * 0.5;
+
+    exibir_perda_faturamento.innerHTML = `Com um faturamento anual de <b>R$${faturamentoAnual}</b>, até <b>R$${perdaFatTotal}</b> são perdidos durante todo o processo de produção, sendo até <b>R$${perdaFatTransporte}</b> somente durante o transporte. Essa perda afeta diretamente o faturamento da sua empresa. Nosso projeto pode ajudar a reduzir essas perdas e aumentar seu faturamento.`;
+
+    perdaFatTransporte2 = perdaFatTotal * 0.2; // As perdas serão reduzidas para 20%
+    var valorRestaurado = perdaFatTransporte - perdaFatTransporte2;
+
+    exibir_valor_restaurado.innerHTML = `Iremos restaurar <b>até 30% (R$${valorRestaurado})</b> dos <b>R$${perdaFatTransporte}</b> perdidos no seu faturamento durante o transporte. Ou seja, depois da implementação do sistema, as suas perdas cairão para <b>R$${perdaFatTransporte2}</b>. Isso representa um aumento significativo nos seus ganhos.`;
+
+    var retornoTotal = valorRestaurado * 3;
+    var investimentoProjeto = 40000;
+
+    var roi = ((retornoTotal - investimentoProjeto) / investimentoProjeto) * 100;
+    exibir_roi.innerHTML = `O investimento em nosso projeto será <b>recompensado em 3 anos</b> com um <b>ROI de ${roi.toFixed(2)}%</b>. Isso significa um <b>retorno financeiro de R$${valorRestaurado} por ano</b>, <b>totalizando R$${retornoTotal} em 3 anos</b>. Não perca a oportunidade de melhorar sua eficiência e rentabilidade.`;
+  }
+</script>
